@@ -1,18 +1,27 @@
-// next.config.mjs
+// filepath: c:\Users\Shayan-MV\Desktop\This\pwaapp\next.config.mjs
 import withPWA from 'next-pwa';
 
 const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
 };
 
 export default withPWA({
   dest: 'public',
-  disable: isDev, // Only disable in development
+  disable: isDev,
   register: true,
   skipWaiting: true,
+  runtimeCaching: [
+    {
+      urlPattern: /^https?.*/,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'offlineCache',
+        expiration: {
+          maxEntries: 200
+        }
+      }
+    }
+  ]
 })(nextConfig);
