@@ -1,10 +1,10 @@
 {
-  "name": "My Next.js PWA",
-  "short_name": "NextPWA",
+  "name": "PWA Calculator",
+  "short_name": "Calculator",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#317EFB",
+  "theme_color": "#0070f3",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
