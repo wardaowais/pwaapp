@@ -1,7 +1,7 @@
 // app/layout.jsx
 export const metadata = {
   title: 'PWA Calculator',
-  description: 'A simple PWA calculator built with Next.js',
+  description: 'A simple PWA calculator built with Next.js by warda',
 };
 
 export default function RootLayout({ children }) {
