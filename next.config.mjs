@@ -28,6 +28,7 @@ export default withPWA({
         }
       }
     },
+    
     {
       urlPattern: /\/_next\/image\?url=.+/i,
       handler: 'StaleWhileRevalidate',
@@ -52,3 +53,14 @@ export default withPWA({
     }
   ]
 })(nextConfig);
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
+module.exports = {
+  //... other configurations ...
+  plugins: [
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
+  ],
+};
